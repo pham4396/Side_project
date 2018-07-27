@@ -18,7 +18,7 @@ my_ui <- fluidPage(
     sidebarLayout(
       sidebarPanel(
         h3("Filters"),
-        checkboxGroupInput("conference_filters", label = "Which conference(s) would you like to look at?",
+        radioButtons("conference_filters", label = "Which conference(s) would you like to look at?",
                            choices = unique(university_bands_without_websites$Conference)
         ),
         sliderInput("members_filter", label = "How many members?",
@@ -31,12 +31,13 @@ my_ui <- fluidPage(
                            choices = c("Yes, Only bands with a Color Guard", "No, All Bands", "No, Only bands without a Color Guard")
         
         ),
-        checkboxGroupInput("audition_filter", label = "Auditions?", 
+        radioButtons("audition_filter", label = "Auditions?", 
                           choices = unique(university_bands_without_websites$`Auditions?`)
         ),
         checkboxGroupInput("style_filter", label = "Which marching Style would you like to look at",
                            choices = c("Chair Step", "Ankle Knee Step", "Straight Leg", "Roll Step", "Glide Step", "Scatter", "Corps Style")
-        )
+        ),
+        uiOutput("conference_filters")
       ),
     
     mainPanel(
@@ -59,9 +60,19 @@ my_ui <- fluidPage(
 
 
 my_server <- function(input, output, session ){
-  output$table <- renderDataTable(university_bands_without_websites, options = list(pageLength = 16))
+  
+  band_filters <- reactive({
+    bands <- university_bands_without_websites %>%
+      filter(input$conference_filters == Conference,
+            input$audition_filter == `Auditions?`
+      )
+    return(bands)
+  })
+  #works but fix when no conferences are selected
+  output$table <- renderDataTable(band_filters(), options = list(pageLength = 16))
   return('table')
 }
+
     
 
 shinyApp(my_ui, my_server)
