@@ -35,8 +35,7 @@ my_ui <- fluidPage(
                           choices = unique(university_bands_without_websites$`Auditions?`)
         ),
         checkboxGroupInput("style_filter", label = "Which marching Style would you like to look at",
-                           # choices = c("Straight Leg", "Roll/Glide Step", "Chair Step", "Ankle Knee Step")
-                           choices = unique(university_bands_without_websites$`Marching Style`)
+                           choices = c("Chair Step", "Ankle Knee Step", "Straight Leg", "Roll Step", "Glide Step", "Scatter", "Corps Style")
         )
       ),
     

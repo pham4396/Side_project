@@ -34,7 +34,7 @@ Auburn University,Tigers,SEC,Yes but not winds,Yes,380,Roll/Chair Step,Auburn Un
 Louisiana State University,Tigers,SEC,Yes,Yes,325,Roll/Chair Step,The Golden Band From Tigerland,,no(marching style)
 University of Mississippi,Rebels,SEC,Yes,Yes,300,Roll Step,Ole Miss Band,,yes
 Mississippi State University,Bulldogs,SEC,Yes,Yes,390,Roll/Chair Step,The Famous Maroon Marching Band,,no(marching style)
-Texas A&M University,Aggies,SEC,Yes,No,300,Roll/Chair Step,Fightin’ Texas Aggie Band,,no(marching style)
+Texas A&M University,Aggies,SEC,Yes,No,300,Straight Leg,Fightin’ Texas Aggie Band,,no(marching style)
 Boston College,Eagles,ACC,No,No,180,Glide/Chair Step,Screaming Eagles,,yes
 Clemson University,Tigers,ACC,Yes,Yes,350,Glide/Chair Step,Clemson University Tiger Band,,yes
 Florida State University,Seminoles,ACC,Yes,Yes,400,Roll/Chair Step,Marching Chiefs,,yes
@@ -54,7 +54,7 @@ Indiana University,Hoosiers,Big Ten,Yes but not winds,No,250,Roll/Chair Step,Mar
 University of Maryland,Terrapins,Big Ten,Only Drumline,Yes,250,Glide/Chair Step,Mighty Sound of Maryland,,yes
 University of Michigan,Wolverines,Big Ten,Yes,Yes,400,Glide/Chair Step,The Michigan Marching Band,,yes
 Michigan State University,Spartans,Big Ten,Yes,Yes,300,Glide/Chair Step,Spartan Marching Band,,yes
-Ohio State University,Buckeyes,Big Ten,Yes,No,228,Glide/Chair Step,The Best Damn Band in the Land,,yes
+Ohio State University,Buckeyes,Big Ten,Yes,No,228,Chair Step,The Best Damn Band in the Land,,yes
 Pennsylvania State University,Nittany Lions,Big Ten,Yes,Yes,300,Glide/Chair Step,Penn State Blue Band,,yes
 Rutgers University New Brunswick,Scarlet Knights,Big Ten,No,Yes,255,Glide/Chair Step,The Pride of New Jersey,,yes
 University of Illinois,Figthing Illini,Big Ten,Yes,Yes,375,Glide/Ankle Knee Step,Marching Illini,,yes
