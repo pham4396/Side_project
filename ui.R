@@ -34,9 +34,9 @@ my_ui <- fluidPage(
         radioButtons("audition_filter", label = "Auditions?", 
                           choices = unique(university_bands_without_websites$`Auditions?`)
         ),
-        radioButtons("style_filter", label = "Which marching Style would you like to look at",
-                           choices = c("Chair Step", "Ankle Knee Step", "Straight Leg", "Roll Step", "Glide Step", "Scatter", "Corps Style")
-        ),
+        # radioButtons("style_filter", label = "Which marching Style would you like to look at",
+        #                    choices = c("Chair Step", "Ankle Knee Step", "Straight Leg", "Roll Step", "Glide Step", "Scatter", "Corps Style")
+        # ),
         uiOutput("conference_filters")
       ),
     
@@ -67,7 +67,15 @@ my_server <- function(input, output, session ){
         input$conference_filters == Conference &
             input$audition_filter == `Auditions?` & 
                `Number of Members` >= input$members_filter [1] &
-               `Number of Members` <= input$members_filter [2]
+               `Number of Members` <= input$members_filter [2]  &
+          if (input$colorguard_filter == "Yes, Only bands with a Color Guard") {
+            `Colorguard?` == "Yes"
+          } else if (input$colorguard_filter == "No, All Bands") {
+            `Colorguard?` == "Yes" | `Colorguard?` == "No"
+          } else {
+            `Colorguard?` == "No"
+          }
+        
       )
     return(bands)
   })
@@ -76,7 +84,7 @@ my_server <- function(input, output, session ){
   return('table')
 }
 
-    
+
 
 shinyApp(my_ui, my_server)
 
